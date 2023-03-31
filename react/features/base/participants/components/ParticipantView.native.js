@@ -13,7 +13,7 @@ import VideoTrack from '../../media/components/native/VideoTrack';
 import { shouldRenderVideoTrack } from '../../media/functions';
 import { Container } from '../../react';
 import { toState } from '../../redux/functions';
-import { TestHint } from '../../testing/components';
+import TestHint from '../../testing/components/TestHint';
 import { getVideoTrackByParticipant } from '../../tracks/functions';
 import { getParticipantById, getParticipantDisplayName, isSharedVideoParticipant } from '../functions';
 

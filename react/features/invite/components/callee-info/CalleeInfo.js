@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Avatar from '../../../base/avatar/components/Avatar';
-import { MEDIA_TYPE } from '../../../base/media';
+import { MEDIA_TYPE } from '../../../base/media/constants';
 import {
     getParticipantDisplayName,
     getParticipantPresenceStatus,
     getRemoteParticipants
-} from '../../../base/participants';
+} from '../../../base/participants/functions';
 import { Container, Text } from '../../../base/react';
 import { isLocalTrackMuted } from '../../../base/tracks';
 import PresenceLabel from '../../../presence-status/components/PresenceLabel';

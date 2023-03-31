@@ -5,9 +5,9 @@ import {
     ACTION_PINNED,
     ACTION_UNPINNED,
     createOfferAnswerFailedEvent,
-    createPinnedEvent,
-    sendAnalytics
-} from '../../analytics';
+    createPinnedEvent
+} from '../../analytics/AnalyticsEvents';
+import { sendAnalytics } from '../../analytics/functions';
 import { reloadNow } from '../../app/actions';
 import { removeLobbyChatParticipant } from '../../chat/actions.any';
 import { openDisplayNamePrompt } from '../../display-name/actions';
@@ -17,17 +17,16 @@ import { setIAmVisitor } from '../../visitors/actions';
 import { overwriteConfig } from '../config/actions';
 import { CONNECTION_ESTABLISHED, CONNECTION_FAILED } from '../connection/actionTypes';
 import { connect, connectionDisconnected, disconnect } from '../connection/actions';
-import { validateJwt } from '../jwt';
+import { validateJwt } from '../jwt/functions';
 import { JitsiConferenceErrors } from '../lib-jitsi-meet';
+import { PARTICIPANT_UPDATED, PIN_PARTICIPANT } from '../participants/actionTypes';
+import { PARTICIPANT_ROLE } from '../participants/constants';
 import {
-    PARTICIPANT_ROLE,
-    PARTICIPANT_UPDATED,
-    PIN_PARTICIPANT,
     getLocalParticipant,
     getParticipantById,
     getPinnedParticipant
-} from '../participants';
-import { MiddlewareRegistry } from '../redux';
+} from '../participants/functions';
+import MiddlewareRegistry from '../redux/MiddlewareRegistry';
 import { TRACK_ADDED, TRACK_REMOVED, destroyLocalTracks } from '../tracks';
 
 import {

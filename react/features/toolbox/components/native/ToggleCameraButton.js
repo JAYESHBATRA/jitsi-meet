@@ -2,10 +2,11 @@
 
 import { connect } from 'react-redux';
 
-import { translate } from '../../../base/i18n';
-import { IconCameraRefresh } from '../../../base/icons';
-import { MEDIA_TYPE, toggleCameraFacingMode } from '../../../base/media';
-import { AbstractButton, type AbstractButtonProps } from '../../../base/toolbox/components';
+import { translate } from '../../../base/i18n/functions';
+import { IconCameraRefresh } from '../../../base/icons/svg';
+import { toggleCameraFacingMode } from '../../../base/media/actions';
+import { MEDIA_TYPE } from '../../../base/media/constants';
+import AbstractButton, { IProps as AbstractButtonProps } from '../../../base/toolbox/components/AbstractButton';
 import { isLocalTrackMuted } from '../../../base/tracks';
 
 /**

@@ -4,18 +4,18 @@ import { connect } from 'react-redux';
 import type { Dispatch } from 'redux';
 
 import { JitsiTrackEvents } from '../../../base/lib-jitsi-meet';
-import { MEDIA_TYPE, VIDEO_TYPE } from '../../../base/media';
+import { MEDIA_TYPE, VIDEO_TYPE } from '../../../base/media/constants';
+import { pinParticipant } from '../../../base/participants/actions';
+import ParticipantView from '../../../base/participants/components/ParticipantView.native';
+import { PARTICIPANT_ROLE } from '../../../base/participants/constants';
 import {
-    PARTICIPANT_ROLE,
     getLocalParticipant,
     getParticipantByIdOrUndefined,
     getParticipantCount,
     hasRaisedHand,
     isEveryoneModerator,
-    isScreenShareParticipant,
-    pinParticipant
-} from '../../../base/participants';
-import ParticipantView from '../../../base/participants/components/ParticipantView.native';
+    isScreenShareParticipant
+} from '../../../base/participants/functions';
 import { FakeParticipant } from '../../../base/participants/types';
 import { Container } from '../../../base/react';
 import {

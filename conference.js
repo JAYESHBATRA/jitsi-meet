@@ -17,9 +17,9 @@ import {
     createDeviceChangedEvent,
     createScreenSharingEvent,
     createStartSilentEvent,
-    createTrackMutedEvent,
-    sendAnalytics
-} from './react/features/analytics';
+    createTrackMutedEvent
+} from './react/features/analytics/AnalyticsEvents';
+import { sendAnalytics } from './react/features/analytics/functions';
 import {
     maybeRedirectToWelcomePage,
     redirectToStaticPage,
@@ -86,22 +86,21 @@ import {
 } from './react/features/base/lib-jitsi-meet';
 import { isFatalJitsiConnectionError } from './react/features/base/lib-jitsi-meet/functions';
 import {
-    MEDIA_TYPE,
-    getStartWithAudioMuted,
-    getStartWithVideoMuted,
-    isVideoMutedByUser,
     setAudioAvailable,
     setAudioMuted,
     setAudioUnmutePermissions,
     setVideoAvailable,
     setVideoMuted,
     setVideoUnmutePermissions
-} from './react/features/base/media';
+} from './react/features/base/media/actions';
+import { MEDIA_TYPE } from './react/features/base/media/constants';
+import {
+    getStartWithAudioMuted,
+    getStartWithVideoMuted,
+    isVideoMutedByUser
+} from './react/features/base/media/functions';
 import {
     dominantSpeakerChanged,
-    getLocalParticipant,
-    getNormalizedDisplayName,
-    getVirtualScreenshareParticipantByOwnerId,
     localParticipantAudioLevelChanged,
     localParticipantRoleChanged,
     participantKicked,
@@ -112,8 +111,13 @@ import {
     participantUpdated,
     screenshareParticipantDisplayNameChanged,
     updateRemoteParticipantFeatures
-} from './react/features/base/participants';
-import { updateSettings } from './react/features/base/settings';
+} from './react/features/base/participants/actions';
+import {
+    getLocalParticipant,
+    getNormalizedDisplayName,
+    getVirtualScreenshareParticipantByOwnerId
+} from './react/features/base/participants/functions';
+import { updateSettings } from './react/features/base/settings/actions';
 import {
     addLocalTrack,
     createLocalTracksF,

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { translate } from '../../base/i18n';
+import { translate } from '../../base/i18n/functions';
 import { AbstractPage } from '../../base/react';
 import { openSettings } from '../../mobile/permissions';
 import { refreshCalendar } from '../actions';

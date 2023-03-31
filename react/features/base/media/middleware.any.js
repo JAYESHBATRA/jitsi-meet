@@ -4,9 +4,9 @@ import {
     createStartAudioOnlyEvent,
     createStartMutedConfigurationEvent,
     createSyncTrackStateEvent,
-    createTrackMutedEvent,
-    sendAnalytics
-} from '../../analytics';
+    createTrackMutedEvent
+} from '../../analytics/AnalyticsEvents';
+import { sendAnalytics } from '../../analytics/functions';
 import { APP_STATE_CHANGED } from '../../mobile/background';
 import { showWarningNotification } from '../../notifications/actions';
 import { NOTIFICATION_TIMEOUT_TYPE } from '../../notifications/constants';
@@ -17,9 +17,9 @@ import { setAudioOnly } from '../audio-only/actions';
 import { SET_ROOM } from '../conference/actionTypes';
 import { isRoomValid } from '../conference/functions';
 import { getMultipleVideoSendingSupportFeatureFlag } from '../config/functions.any';
-import { getLocalParticipant } from '../participants';
-import { MiddlewareRegistry } from '../redux';
-import { getPropertyValue } from '../settings';
+import { getLocalParticipant } from '../participants/functions';
+import MiddlewareRegistry from '../redux/MiddlewareRegistry';
+import { getPropertyValue } from '../settings/functions.any';
 import {
     TRACK_ADDED,
     destroyLocalTracks,

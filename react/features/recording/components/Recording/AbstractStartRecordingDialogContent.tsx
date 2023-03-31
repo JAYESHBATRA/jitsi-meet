@@ -7,8 +7,7 @@ import { sendAnalytics } from '../../../analytics/functions';
 import { IReduxState } from '../../../app/types';
 import ColorSchemeRegistry from '../../../base/color-scheme/ColorSchemeRegistry';
 import { _abstractMapStateToProps } from '../../../base/dialog/functions';
-// @ts-ignore
-import { StyleType } from '../../../base/styles';
+import { StyleType } from '../../../base/styles/functions.any';
 import { authorizeDropbox, updateDropboxToken } from '../../../dropbox/actions';
 import { isVpaasMeeting } from '../../../jaas/functions';
 import { RECORDING_TYPES } from '../../constants';

@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import VideoLayout from '../../../../modules/UI/videolayout/VideoLayout';
-import { VIDEO_TYPE } from '../../base/media';
-import { getLocalParticipant } from '../../base/participants';
+import { VIDEO_TYPE } from '../../base/media/constants';
+import { getLocalParticipant } from '../../base/participants/functions';
 import { Watermarks } from '../../base/react';
 import { getHideSelfView } from '../../base/settings/functions.any';
 import { getVideoTrackByParticipant } from '../../base/tracks';
-import { setColorAlpha } from '../../base/util';
+import { setColorAlpha } from '../../base/util/helpers';
 import StageParticipantNameLabel from '../../display-name/components/web/StageParticipantNameLabel';
 import { FILMSTRIP_BREAKPOINT } from '../../filmstrip/constants';
 import { getVerticalViewMaxWidth, isFilmstripResizable } from '../../filmstrip/functions.web';

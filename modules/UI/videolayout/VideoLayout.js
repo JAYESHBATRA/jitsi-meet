@@ -2,12 +2,12 @@
 
 import Logger from '@jitsi/logger';
 
-import { MEDIA_TYPE, VIDEO_TYPE } from '../../../react/features/base/media';
+import { MEDIA_TYPE, VIDEO_TYPE } from '../../../react/features/base/media/constants';
 import {
     getParticipantById,
     getPinnedParticipant,
     isScreenShareParticipantById
-} from '../../../react/features/base/participants';
+} from '../../../react/features/base/participants/functions';
 import {
     getTrackByMediaTypeAndParticipant,
     getVideoTrackByParticipant
